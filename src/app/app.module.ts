@@ -1,29 +1,31 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PrimeNGBundleModule } from './primeng.module';
-
-import { CloudinaryModule } from '@cloudinary/angular-5.x';
-import * as  Cloudinary from 'cloudinary-core';
+import { CrudTableComponent } from './components/tables/crud/crud-table.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CrudTableComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     PrimeNGBundleModule,
-    CloudinaryModule.forRoot(Cloudinary, { cloud_name: 'bean-erp'})
+    HttpClientModule
   ],
   providers: [],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
