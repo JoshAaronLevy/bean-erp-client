@@ -6,6 +6,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PrimeNGBundleModule } from './primeng.module';
 
+import { CloudinaryModule } from '@cloudinary/angular-5.x';
+import * as  Cloudinary from 'cloudinary-core';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -14,7 +17,8 @@ import { PrimeNGBundleModule } from './primeng.module';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    PrimeNGBundleModule
+    PrimeNGBundleModule,
+    CloudinaryModule.forRoot(Cloudinary, { cloud_name: 'bean-erp'})
   ],
   providers: [],
   schemas: [
